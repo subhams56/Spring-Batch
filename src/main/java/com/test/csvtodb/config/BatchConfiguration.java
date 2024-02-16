@@ -51,6 +51,23 @@ public class BatchConfiguration {
                 .targetType(MyEntity.class)
                 .build();
     }
+// @Bean
+//     public FlatFileItemReader<MyEntity> personItemReader() {
+//         FlatFileItemReader<MyEntity> reader = new FlatFileItemReader<>();
+//         reader.setLinesToSkip(1);
+//         reader.setResource(new ClassPathResource("data.csv"));
+
+//         DefaultLineMapper<MyEntity> customerLineMapper = new DefaultLineMapper<>();
+
+//         DelimitedLineTokenizer tokenizer = new DelimitedLineTokenizer();
+//         tokenizer.setNames(new String[] {"Zip_Code","Official_USPS_city_name","Official_USPS_State_Code","Official_State_Name","ZCTA","ZCTA_parent","Population","Density","Primary_Official_County_Code","Primary_Official_County_Name","Official_County_Name","Official_County_Code","Imprecise","Military","Timezone","Geo_Point"});
+//         tokenizer.setDelimiter(",");
+//         customerLineMapper.setLineTokenizer(tokenizer);
+//         customerLineMapper.setFieldSetMapper(new ZipCodeMapper());
+//         customerLineMapper.afterPropertiesSet();
+//         reader.setLineMapper(customerLineMapper);
+//         return reader;
+//     }
 
     @Bean
     public CsvItemProcessor processor() {
